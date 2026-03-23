@@ -1,0 +1,162 @@
+{
+  "system_directive": "Act as an intelligent dispatcher. Read this catalog. When the user requests a task, identify the required skills, load ONLY their specific files from the /skills/ folder, and apply their rules before generating output. Pay strict attention to 'requires_stack'.",
+  "skills_catalog": [
+    {
+      "id": "ideation-brainstorming",
+      "path": "skills/01_ideation/ideation-brainstorming.md",
+      "triggers": ["brainstorming", "ideas", "features", "mvp", "concept", "planning"],
+      "description": "Rules for high-signal, constraint-driven ideation. Use to define core features and MVP scope without bloat."
+    },
+    {
+      "id": "ui-bento-grid",
+      "path": "skills/02_design_ui/ui-bento-grid.md",
+      "triggers": ["dashboard", "modern ui", "cards", "portfolio", "bento"],
+      "description": "Rules for modern Bento Grid layouts. Use for data-heavy or modern dashboard interfaces."
+    },
+    {
+      "id": "ui-corporate-trust",
+      "path": "skills/02_design_ui/ui-corporate-trust.md",
+      "triggers": ["bank", "fintech", "legal", "enterprise", "serious"],
+      "description": "Heuristics for enterprise/financial UI. Ensures high trust, conservative scales, and clear hierarchy."
+    },
+    {
+      "id": "ux-core-a11y",
+      "path": "skills/02_design_ui/ux-core-a11y.md",
+      "triggers": ["any web ui", "frontend", "html", "react"],
+      "description": "MANDATORY for all UI generation. WCAG 2.1 contrast and semantic HTML rules."
+    },
+    {
+      "id": "react-perf-patterns",
+      "path": "skills/03_frontend_core/react-perf-patterns.md",
+      "triggers": ["react", "nextjs", "performance", "components", "frontend"],
+      "requires_stack": ["react", "nextjs"],
+      "description": "Core architecture rules for React and Next.js App Router. Strict rules on Client vs Server components."
+    },
+    {
+      "id": "firebase-auth-db",
+      "path": "skills/04_architecture/firebase-auth-db.md",
+      "triggers": ["database", "auth", "backend", "login", "firestore"],
+      "requires_stack": ["firebase"],
+      "description": "Firebase security rules and optimized queries. DO NOT LOAD unless the user explicitly defines Firebase in their stack."
+    },
+    {
+      "id": "seo-strategy-core",
+      "path": "skills/04_architecture/seo-strategy-core.md",
+      "triggers": ["seo", "search engine", "ranking", "discoverability", "marketing"],
+      "description": "Framework-agnostic SEO rules. Semantic HTML, content hierarchy, and Core Web Vitals theory."
+    },
+    {
+      "id": "nextjs-seo-technical",
+      "path": "skills/04_architecture/nextjs-seo-technical.md",
+      "triggers": ["seo", "metadata", "sitemap", "opengraph", "head"],
+      "requires_stack": ["nextjs"],
+      "description": "Technical SEO implementation specifically for Next.js App Router (Metadata API, sitemap.ts, robots.ts)."
+    },
+    {
+      "id": "astro-seo-technical",
+      "path": "skills/04_architecture/astro-seo-technical.md",
+      "triggers": ["seo", "metadata", "sitemap", "opengraph", "head"],
+      "requires_stack": ["astro"],
+      "description": "Technical SEO implementation specifically for Astro (astro-seo, static generation, zero-js)."
+    },
+    {
+      "id": "ui-microinteractions",
+      "path": "skills/02_design_ui/ui-microinteractions.md",
+      "triggers": ["animation", "framer motion", "transitions", "hover", "interactive"],
+      "description": "Rules for purposeful animations. Prevents motion sickness and layout shifts."
+    },
+    {
+      "id": "react-hook-form-zod",
+      "path": "skills/03_frontend_core/react-hook-form-zod.md",
+      "triggers": ["form", "input", "validation", "submit", "zod"],
+      "requires_stack": ["react"],
+      "description": "Architecture for complex forms. Prevents re-render cascades using uncontrolled inputs and schema validation."
+    },
+    {
+      "id": "state-management-core",
+      "path": "skills/03_frontend_core/state-management-core.md",
+      "triggers": ["state", "zustand", "context", "redux", "store", "url params"],
+      "requires_stack": ["react"],
+      "description": "Rules for global vs local state. Prioritizes URL state, then Zustand. Strictly prohibits premature Redux."
+    },
+    {
+      "id": "nextjs-migration-refactor",
+      "path": "skills/03_frontend_core/nextjs-migration-refactor.md",
+      "triggers": ["update", "refactor", "legacy", "migrate", "pages router", "old project"],
+      "requires_stack": ["nextjs"],
+      "description": "Rules for auditing and migrating legacy Next.js (Pages Router) to App Router. Prevents paradigm mixing."
+    },
+    {
+      "id": "date-time-architecture",
+      "path": "skills/04_architecture/date-time-architecture.md",
+      "triggers": ["schedule", "booking", "calendar", "time", "date", "timezone", "agendamiento"],
+      "description": "CRITICAL rules for handling dates, times, and timezones in scheduling apps. UTC storage vs Local display."
+    },
+    {
+      "id": "ui-audit-niche",
+      "path": "skills/02_design_ui/ui-audit-niche.md",
+      "triggers": ["audit", "review", "modernize", "redesign", "niche", "improve design"],
+      "description": "Heuristics for auditing legacy UIs and adapting modern design patterns to specific industry niches (SaaS, E-commerce, etc)."
+    },
+    {
+      "id": "ui-data-dense-dashboards",
+      "path": "skills/02_design_ui/ui-data-dense-dashboards.md",
+      "triggers": ["dashboard", "admin", "panel", "table", "reports", "data heavy", "barber", "portal"],
+      "description": "CRITICAL rules for data-dense UIs. Fixes wasted space on PC, massive headers, mobile table scrolling, and enforces text-labeled icons."
+    },
+    {
+      "id": "logic-slot-booking-math",
+      "path": "skills/04_architecture/logic-slot-booking-math.md",
+      "triggers": ["booking", "slots", "calendar api", "duration", "appointments", "agendamiento", "huecos"],
+      "description": "Mathematical logic for calculating available time slots based on service duration and external calendar busy periods."
+    },
+    {
+      "id": "tech-lead-collaboration",
+      "path": "skills/05_workflow/tech-lead-collaboration.md",
+      "triggers": ["complex", "large project", "full app", "architecture", "plan", "coordinate", "tech lead", "barbería", "sistema completo"],
+      "description": "CRITICAL protocol for large projects. Enforces phase-based execution, database schema approval, and prevents the AI from making unauthorized architectural decisions."
+    },
+    {
+      "id": "defensive-refactoring",
+      "path": "skills/05_workflow/defensive-refactoring.md",
+      "triggers": ["refactor", "redesign", "update ui", "change styles", "legacy code", "modify existing", "arreglar sin romper", "mejorar diseño"],
+      "description": "Rules for modifying existing code safely. Enforces logic extraction (custom hooks) before UI changes, atomic commits, and parallel component creation."
+    },
+    {
+      "id": "debugging-data-flow",
+      "path": "skills/05_workflow/debugging-data-flow.md",
+      "triggers": ["bug", "fix", "data missing", "desync", "not updating", "connection issue", "troubleshoot", "debug", "no se ve", "desvinculación"],
+      "description": "Protocol for tracing data flow issues (DB -> Network -> State -> UI). Fixes real-time desyncs between different user panels."
+    },
+    {
+      "id": "agentic-whatsapp-bot",
+      "path": "skills/06_ai_agents/agentic-whatsapp-bot.md",
+      "triggers": ["whatsapp", "bot", "agent", "agente", "autónomo", "function calling", "tools", "gemini api", "recepcionista", "webhook"],
+      "description": "Architecture and implementation rules for building autonomous AI agents using Gemini Function Calling, Firebase Cloud Functions, and WhatsApp Webhooks."
+    },
+    {
+      "id": "agentic-human-in-the-loop",
+      "path": "skills/06_ai_agents/agentic-human-in-the-loop.md",
+      "triggers": ["telegram", "human in the loop", "hitl", "approval", "revisor humano", "aprobar", "blog automático", "asíncrono", "supervisor"],
+      "description": "Architecture for asynchronous Human-in-the-Loop (HITL) agents using Telegram Webhooks, Firestore State Machines, and Cloud Functions to prevent timeouts."
+    },
+    {
+      "id": "saas-multi-tenancy",
+      "path": "skills/07_saas_business/saas-multi-tenancy.md",
+      "triggers": ["saas", "multi-tenant", "b2b", "múltiples clientes", "aislamiento", "tenantId", "empresas", "agencias"],
+      "description": "Firestore architecture and security rules for B2B SaaS applications. Enforces tenant isolation using tenantId."
+    },
+    {
+      "id": "saas-monetization-tokens",
+      "path": "skills/07_saas_business/saas-monetization-tokens.md",
+      "triggers": ["stripe", "billing", "cobrar", "suscripción", "créditos", "tokens", "monetización", "pagos", "usage-based"],
+      "description": "Implementation of Stripe billing, subscription tiers, and usage-based credit deduction for AI API calls to protect profit margins."
+    },
+    {
+      "id": "saas-async-workers",
+      "path": "skills/07_saas_business/saas-async-workers.md",
+      "triggers": ["background job", "cloud tasks", "pub/sub", "heavy processing", "larga duración", "procesamiento en lote", "async worker", "cola de tareas"],
+      "description": "Architecture for long-running AI tasks using Google Cloud Tasks or Pub/Sub, with Firestore listeners for frontend progress updates."
+    }
+  ]
+}
